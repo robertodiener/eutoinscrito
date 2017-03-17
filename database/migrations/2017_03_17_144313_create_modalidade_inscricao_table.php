@@ -16,6 +16,8 @@ class CreateModalidadeInscricaoTable extends Migration
         Schema::create('modalidade', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('nome');
+            $table->string('valor');
         });
     }
 

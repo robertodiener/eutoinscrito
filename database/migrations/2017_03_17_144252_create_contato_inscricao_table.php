@@ -16,6 +16,15 @@ class CreateContatoInscricaoTable extends Migration
         Schema::create('inscricao', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->integer('numero');
+            $table->string('camiseta');
+            $table->string('taxa_de_servico');
+            $table->string('valor_total');
+            $table->string('forma_de_pagamento');
+            $table->timestamp('data_inscricao');
+            $table->string('desconto');
+            $table->integer('id_atleta')->unsigned();
+            $table->foreign('id_atleta')->references('id')->on('atleta')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

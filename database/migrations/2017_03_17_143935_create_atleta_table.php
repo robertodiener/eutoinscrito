@@ -16,6 +16,14 @@ class CreateAtletaTable extends Migration
         Schema::create('atleta', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('nome');
+            $table->string('sobrenome');
+            $table->string('Nome_de_guerra');
+            $table->string('telefone');
+            $table->date('data_nascimento');
+            $table->integer('cpf');
+            $table->string('cluebe');
+            $table->binary('imagem');
         });
     }
 

@@ -16,6 +16,15 @@ class CreateEnderecoTable extends Migration
         Schema::create('endereco', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->integer('id_atleta')->unsigned();
+            $table->foreign('id_atleta')->references('id')->on('atleta')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('cep');
+            $table->string('estado');
+            $table->string('cidade');
+            $table->string('bairro');
+            $table->string('complemento');
+            $table->string('numero');
+            $table->string('logradouro');
         });
     }
 
